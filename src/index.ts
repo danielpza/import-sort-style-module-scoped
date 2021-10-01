@@ -1,4 +1,4 @@
-import { IStyleAPI, IStyleItem } from 'import-sort-style';
+import { IStyleAPI, IStyleItem } from "import-sort-style";
 
 interface IImport {
   start: number;
@@ -12,7 +12,11 @@ interface IImport {
   namedMembers: NamedMember[];
 }
 
-declare type ImportType = 'import' | 'require' | 'import-equals' | 'import-type';
+declare type ImportType =
+  | "import"
+  | "require"
+  | "import-equals"
+  | "import-type";
 declare type NamedMember = {
   name: string;
   alias: string;
@@ -33,7 +37,7 @@ export default function (styleApi: IStyleAPI): IStyleItem[] {
   } = styleApi;
 
   function isScopedModule(imported: IImport) {
-    return imported.moduleName[0] === '@';
+    return imported.moduleName[0] === "@";
   }
 
   return [
